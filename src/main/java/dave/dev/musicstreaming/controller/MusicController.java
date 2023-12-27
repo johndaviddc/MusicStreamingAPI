@@ -31,4 +31,9 @@ public class MusicController {
     public Song saveSong(@RequestBody Song song) {
         return songService.saveSong(song);
     }
+
+    @DeleteMapping("/songs/{id}")
+    public void deleteSong(@PathVariable Long id) {
+        songService.deleteSong(id);
+    }
 }
