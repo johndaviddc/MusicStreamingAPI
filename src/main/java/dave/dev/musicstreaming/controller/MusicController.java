@@ -1,5 +1,6 @@
 package dave.dev.musicstreaming.controller;
 
+import dave.dev.musicstreaming.model.Playlist;
 import dave.dev.musicstreaming.model.Song;
 import dave.dev.musicstreaming.service.PlayListService;
 import dave.dev.musicstreaming.service.SongService;
@@ -35,5 +36,15 @@ public class MusicController {
     @DeleteMapping("/songs/{id}")
     public void deleteSong(@PathVariable Long id) {
         songService.deleteSong(id);
+    }
+
+    @GetMapping("/playlists")
+    public List<Playlist> getAllPlayLists() {
+        return playListService.getAllPlayLists();
+    }
+
+    @GetMapping("/playlists/{id}")
+    public Playlist getPlayListById(@PathVariable Long id) {
+        return playListService.getPlaylistById(id);
     }
 }
