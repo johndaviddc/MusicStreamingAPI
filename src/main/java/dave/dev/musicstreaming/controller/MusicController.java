@@ -47,4 +47,9 @@ public class MusicController {
     public Playlist getPlayListById(@PathVariable Long id) {
         return playListService.getPlaylistById(id);
     }
+
+    @PostMapping("/playlists")
+    public Playlist savePlaylist(@RequestBody Playlist playlist) {
+        return playListService.savePlaylist(playlist);
+    }
 }
