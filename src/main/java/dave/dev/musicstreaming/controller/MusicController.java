@@ -52,4 +52,9 @@ public class MusicController {
     public Playlist savePlaylist(@RequestBody Playlist playlist) {
         return playListService.savePlaylist(playlist);
     }
+
+    @DeleteMapping("/playlists/{id}")
+    public void deletePlaylist(@PathVariable Long id) {
+        playListService.deletePlaylist(id);
+    }
 }
