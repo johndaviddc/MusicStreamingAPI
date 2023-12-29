@@ -62,4 +62,9 @@ public class MusicController {
     public void addSongtoPlaylist(@PathVariable Long playlistId, @PathVariable Long songId) {
         playListService.addSongToPlaylist(playlistId, songId);
     }
+
+    @DeleteMapping("/playlists/{playlistId}/removeSong/{songId}")
+    public void removeSongFromPlaylist(@PathVariable Long playlistId, @PathVariable Long songId) {
+        playListService.removeSongFromPlaylist(playlistId, songId);
+    }
 }
