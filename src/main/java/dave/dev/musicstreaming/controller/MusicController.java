@@ -57,4 +57,9 @@ public class MusicController {
     public void deletePlaylist(@PathVariable Long id) {
         playListService.deletePlaylist(id);
     }
+
+    @PostMapping("/playlists/{playlistId}/addSong/{songId}")
+    public void addSongtoPlaylist(@PathVariable Long playlistId, @PathVariable Long songId) {
+        playListService.addSongToPlaylist(playlistId, songId);
+    }
 }
